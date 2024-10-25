@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <!-- Title TextView -->
+
+    <!-- Profile TextView -->
+
+    <!-- Login Button -->
+
+    <!-- Sign Up Button -->
+
+    <TextView
+        android:id="@+id/textViewTitle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BikeConnect"
+        android:textColor="#008080"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="63dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <TextView
+        android:id="@+id/textViewProfile"
+        android:layout_width="107dp"
+        android:layout_height="40dp"
+        android:text="PROFILE"
+        android:textColor="#333333"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="275dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="354dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
