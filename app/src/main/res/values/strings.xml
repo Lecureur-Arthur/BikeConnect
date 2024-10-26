@@ -3,4 +3,21 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="Text_Bleutooth">To get started, turn on Bluetooth and connect your bike to Bike connect.\nYour data is waiting for you !</string>
+    <string name="ListWheeleSize">Choose Wheel Size</string>
+
+    <!-- Ajoutez ce tableau de chaînes -->
+    <string-array name="wheel_sizes">
+        <item>12 inches</item>
+        <item>14 inches</item>
+        <item>16 inches</item>
+        <item>18 inches</item>
+        <item>20 inches</item>
+        <item>24 inches</item>
+        <item>26 inches</item>
+        <item>27.5 inches (650B)</item>
+        <item>28 inches (700C)</item>
+        <item>29 inches</item>
+    </string-array>
+
 </resources>
