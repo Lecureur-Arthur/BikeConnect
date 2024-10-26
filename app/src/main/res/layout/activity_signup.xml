@@ -52,7 +52,7 @@ tools:context=".SignUpActivity">
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:text="SIGN UP"
+            android:text="@string/sign_up"
             android:textAlignment="center"
             android:textColor="#F3FFFB"
             android:textSize="25sp"
@@ -61,28 +61,32 @@ tools:context=".SignUpActivity">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your first name"
-            app:boxStrokeColor="#008080"> <!-- Couleur de la ligne -->
+            android:hint="@string/first_name"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"> <!-- Couleur de la ligne -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextFirstName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#F3FFFB"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your last name"
-            app:boxStrokeColor="#008080"> <!-- Couleur de la ligne -->
+            android:hint="@string/last_name"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"> <!-- Couleur de la ligne -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#F3FFFB"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:inputType="textPersonName"
                 android:layout_marginTop="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -90,14 +94,16 @@ tools:context=".SignUpActivity">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter your email"
-            app:boxStrokeColor="#008080"> <!-- Couleur de la ligne -->
+            android:hint="@string/email"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"> <!-- Couleur de la ligne -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#F3FFFB"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -105,14 +111,16 @@ tools:context=".SignUpActivity">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Create a password"
-            app:boxStrokeColor="#008080"> <!-- Couleur de la ligne -->
+            android:hint="@string/password"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"> <!-- Couleur de la ligne -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#F3FFFB"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:inputType="textPassword"
                 android:layout_marginTop="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -120,14 +128,16 @@ tools:context=".SignUpActivity">
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirm your password"
-            app:boxStrokeColor="#008080"> <!-- Couleur de la ligne -->
+            android:hint="@string/confirm_password"
+            android:textColorHint="@color/white"
+            app:boxStrokeColor="@color/white"> <!-- Couleur de la ligne -->
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/editTextConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#F3FFFB"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:inputType="textPassword"
                 android:layout_marginTop="10dp" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -137,7 +147,7 @@ tools:context=".SignUpActivity">
             android:id="@+id/buttonCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create"
+            android:text="@string/create"
             android:textAllCaps="false"
             android:backgroundTint="#B3E5FC"
             android:textColor="#004D40"

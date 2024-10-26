@@ -5,6 +5,14 @@
     <string name="title_notifications">Notifications</string>
     <string name="Text_Bleutooth">To get started, turn on Bluetooth and connect your bike to Bike connect.\nYour data is waiting for you !</string>
     <string name="ListWheeleSize">Choose Wheel Size</string>
+    <string name="login">Login</string>
+    <string name="email">Enter your email</string>
+    <string name="password">Create a password</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="first_name">Enter your first name</string>
+    <string name="last_name">Enter your last name</string>
+    <string name="confirm_password">Confirm your password</string>
+    <string name="create">Create</string>
 
     <!-- Ajoutez ce tableau de chaînes -->
     <string-array name="wheel_sizes">
