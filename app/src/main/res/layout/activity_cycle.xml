@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Grid for Data Fields -->
+    <GridLayout
+        android:id="@+id/dataGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:columnCount="2"
+        android:rowCount="3"
+        android:background="#E0F7FA"
+        android:padding="4dp">
+
+        <!-- Speed -->
+        <TextView
+            android:id="@+id/speedTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Speed\n30.2\nKm/h"
+            android:textSize="18sp"
+            android:background="#E0F7FA" />
+
+        <!-- Distance Covered -->
+        <TextView
+            android:id="@+id/distanceCoveredTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Distance covered\n111.1\nKm"
+            android:textSize="18sp"
+            android:background="#E0F7FA" />
+
+        <!-- Distance Left -->
+        <TextView
+            android:id="@+id/distanceLeftTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Distance left\n888.8\nKm"
+            android:textSize="18sp"
+            android:background="#E0F7FA" />
+
+        <!-- Ride Time -->
+        <TextView
+            android:id="@+id/rideTimeTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Ride time\n3h 20 min"
+            android:textSize="18sp"
+            android:background="#E0F7FA" />
+
+        <!-- Heart Rate -->
+        <TextView
+            android:id="@+id/heartRateTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Heart Rate\n111\nBPM"
+            android:textSize="18sp"
+            android:background="#E0F7FA" />
+
+        <!-- Altitude -->
+        <TextView
+            android:id="@+id/altitudeTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:gravity="center"
+            android:text="Altitude\n200\nm"
+            android:textSize="18sp"
+            android:background="#E0F7FA" />
+    </GridLayout>
+
+    <!-- Map Section -->
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="#B0BEC5" />
+
+    <!-- Retour Button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+
+        <Button
+            android:id="@+id/retourButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retour"
+            android:textSize="14sp"
+            android:background="@color/teal_200"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+</LinearLayout>
