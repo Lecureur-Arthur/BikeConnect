@@ -9,25 +9,39 @@
     tools:context=".LoginActivity">
 
     <!-- Title -->
+
+    <!-- Login Card -->
+
     <TextView
         android:id="@+id/textViewTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
         android:text="@string/app_name"
-        android:textSize="28sp"
         android:textColor="#008080"
+        android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Login Card -->
+    <ImageView
+        android:id="@+id/imageViewConnectIcon"
+        android:layout_width="293dp"
+        android:layout_height="222dp"
+        android:layout_marginTop="170dp"
+        android:contentDescription="Connect Icon"
+        android:src="@drawable/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="300dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         android:layout_marginStart="40dp"
@@ -39,21 +53,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00A391"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:background="#00A391">
+            android:padding="20dp">
 
             <!-- Title Login -->
             <TextView
                 android:id="@+id/textViewLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
                 android:text="@string/login"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp" />
+                android:textStyle="bold" />
 
             <!-- Email Input -->
             <com.google.android.material.textfield.TextInputLayout
@@ -65,12 +79,12 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextEmail"
-                    android:textColor="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    android:textColorHint="@color/white"
-                    android:textColorHighlight="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textColorHighlight="@color/white"
+                    android:textColorHint="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password Input -->
@@ -78,18 +92,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
-                android:textColorHint="@color/white"
                 android:textColor="#FFFFFF"
+                android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/white"> <!-- Couleur de la ligne -->
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:inputType="textPassword"
                     android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:layout_marginTop="10dp" />
+                    android:textColorHint="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Login Button -->
@@ -97,12 +111,12 @@
                 android:id="@+id/buttonLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#B3E5FC"
                 android:text="@string/login"
                 android:textAllCaps="false"
-                android:backgroundTint="#B3E5FC"
-                android:textColor="#004D40"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp" />
+                android:textColor="#004D40" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

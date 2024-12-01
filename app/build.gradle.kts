@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.bikeconnect"
-        minSdk = 24
+        minSdk = 21
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -49,7 +49,10 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.play.services.maps)
+    implementation(libs.osmdroid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
 }

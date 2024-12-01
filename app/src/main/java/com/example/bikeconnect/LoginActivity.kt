@@ -1,5 +1,6 @@
 package com.example.bikeconnect
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -24,6 +25,12 @@ class LoginActivity : AppCompatActivity() {
             if (cursor.moveToFirst()) {
                 Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
 
+                // Naviguer vers la page Viewer (Homepage)
+                val intent = Intent(this, Viewerpage::class.java)
+                startActivity(intent)
+
+                // Optionnel : Terminer cette activité pour empêcher de revenir en arrière
+                finish()
             } else {
                 Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
             }

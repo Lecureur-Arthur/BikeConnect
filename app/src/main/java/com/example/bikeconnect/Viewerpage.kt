@@ -1,32 +1,30 @@
 package com.example.bikeconnect
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
+import androidx.appcompat.app.AppCompatActivity
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.InputStream
 
-class Viewerpage : AppCompatActivity(), OnMapReadyCallback {
+class Viewerpage : AppCompatActivity() {
     private lateinit var speedTextView: TextView
     private lateinit var distanceCoveredTextView: TextView
     private lateinit var distanceLeftTextView: TextView
     private lateinit var rideTimeTextView: TextView
     private lateinit var heartRateTextView: TextView
     private lateinit var altitudeTextView: TextView
-    private lateinit var googleMap: GoogleMap
+    private lateinit var mapImageView: ImageView
+    private  lateinit var Buttonretour:Button
 
     private val handler = Handler(Looper.getMainLooper())
-    private val updateInterval = 2000L // Update every 2 seconds
+    private val updateInterval = 2000L
     private var currentIndex = 0
     private var rideDataArray: JSONArray? = null
 
@@ -41,15 +39,25 @@ class Viewerpage : AppCompatActivity(), OnMapReadyCallback {
         rideTimeTextView = findViewById(R.id.rideTimeTextView)
         heartRateTextView = findViewById(R.id.heartRateTextView)
         altitudeTextView = findViewById(R.id.altitudeTextView)
+        Buttonretour=findViewById(R.id.retourButton)
+        Buttonretour.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+        // Initialize ImageView
+        mapImageView = findViewById(R.id.mapview)
 
-        // Initialize Map
-        val mapFragment = supportFragmentManager.findFragmentById(R.id.mapFragment) as SupportMapFragment
-        mapFragment.getMapAsync(this)
+        // Load JSON data
+        rideDataArray = loadJsonArrayFromAsset("data.json")
 
-        // Load JSON data from assets
-        rideDataArray = loadJsonArrayFromAsset("ride_data.json")
+        // Check if JSON loaded successfully
+        if (rideDataArray == null) {
+            Toast.makeText(this, "Erreur lors du chargement des données JSON", Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, "JSON chargé avec ${rideDataArray!!.length()} entrées", Toast.LENGTH_SHORT).show()
+        }
 
-        // Start updating data in real-time
+        // Start updating data
         startUpdatingData()
     }
 
@@ -64,7 +72,6 @@ class Viewerpage : AppCompatActivity(), OnMapReadyCallback {
 
     private fun updateDataFromJson() {
         try {
-            // Check if there is valid data to display
             rideDataArray?.let { dataArray ->
                 if (currentIndex < dataArray.length()) {
                     val rideData = dataArray.getJSONObject(currentIndex)
@@ -76,8 +83,6 @@ class Viewerpage : AppCompatActivity(), OnMapReadyCallback {
                     val rideTime = rideData.getString("ride_time")
                     val heartRate = rideData.getInt("heart_rate")
                     val altitude = rideData.getInt("altitude")
-                    val latitude = rideData.getDouble("latitude")
-                    val longitude = rideData.getDouble("longitude")
 
                     // Update TextViews
                     speedTextView.text = "Speed\n${speed} Km/h"
@@ -87,24 +92,20 @@ class Viewerpage : AppCompatActivity(), OnMapReadyCallback {
                     heartRateTextView.text = "Heart Rate\n${heartRate} BPM"
                     altitudeTextView.text = "Altitude\n${altitude} m"
 
-                    // Update Map
-                    if (::googleMap.isInitialized) {
-                        val location = LatLng(latitude, longitude)
-                        googleMap.clear()
-                        googleMap.addMarker(MarkerOptions().position(location).title("Current Location"))
-                        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
-                    }
+                    // Debug logs
+                    println("Mise à jour avec les données de l'indice $currentIndex")
 
-                    // Move to the next data entry
+                    // Move to next data
                     currentIndex++
                 } else {
-                    // Reset to the first entry if we reach the end
+                    // Reset index if at the end of the data array
                     currentIndex = 0
+                    println("Reprise au début des données")
                 }
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            Toast.makeText(this, "Error loading data", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Erreur lors de l'actualisation des données", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -113,14 +114,14 @@ class Viewerpage : AppCompatActivity(), OnMapReadyCallback {
             val inputStream: InputStream = assets.open(filename)
             val json = inputStream.bufferedReader().use { it.readText() }
             val jsonObject = JSONObject(json)
-            jsonObject.getJSONArray("ride_data")
+            val dataArray = jsonObject.getJSONArray("data")
+
+            // Log for debugging
+            println("Fichier JSON chargé : ${dataArray.length()} entrées trouvées.")
+            dataArray
         } catch (e: Exception) {
             e.printStackTrace()
             null
         }
-    }
-
-    override fun onMapReady(map: GoogleMap) {
-        googleMap = map
     }
 }

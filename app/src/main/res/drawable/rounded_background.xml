@@ -4,5 +4,5 @@
 
     <solid android:color="#00A391" /> <!-- Couleur de fond -->
 
-    <corners android:radius="10dp" /> <!-- Bord arrondi -->
+    <corners android:radius="16dp" /> <!-- Bord arrondi -->
 </shape>
