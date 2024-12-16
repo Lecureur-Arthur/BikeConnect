@@ -1,4 +1,5 @@
-Description du projet
+Description du projet :
+
   Le but de ce projet est de rendre un vélo normal, un vélo intelligent et connecté. L'application mobile pourra surveiller en temps réel les performances de l'utilisateur 
 avec des capteurs et un microcontrôleur.
 
